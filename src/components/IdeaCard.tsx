@@ -1,6 +1,6 @@
-import type { Idea } from "@/types";
-import { Link } from "@tanstack/react-router";
-import clsx from "clsx";
+import type { Idea } from '@/types';
+import { Link } from '@tanstack/react-router';
+import clsx from 'clsx';
 
 const IdeaCard = ({
   idea,
@@ -10,8 +10,8 @@ const IdeaCard = ({
   button?: boolean;
 }) => {
   const linkClasses = clsx({
-    "text-blue-600 hover:underline mt-3": !button,
-    "w-full text-center mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition":
+    'text-blue-600 hover:underline mt-3': !button,
+    'w-full text-center mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition':
       button,
   });
 
@@ -21,11 +21,11 @@ const IdeaCard = ({
       <p className="text-gray-600 mb-2">{idea.summary}</p>
       <Link
         to="/ideas/$ideaId"
-        params={{ ideaId: idea.id.toString() }}
+        params={{ ideaId: idea._id.toString() }}
         className={linkClasses}
       >
-        {" "}
-        {button ? "View Idea" : "Read more →"}{" "}
+        {' '}
+        {button ? 'View Idea' : 'Read more →'}{' '}
       </Link>
     </div>
   );
